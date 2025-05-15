@@ -16,7 +16,7 @@ class DashboardController extends Controller
 
     public function cumprimento(): string
     {
-        $horaAtual = Carbon::now()->format('H');
+        $horaAtual = (int) Carbon::now()->format('H');
         $cumprimento = '';
 
         if ($horaAtual <= 12) {
@@ -24,7 +24,7 @@ class DashboardController extends Controller
         } else if ($horaAtual > 12 && $horaAtual <= 18) {
             $cumprimento = 'Boníssima tarde, ';
         } else {
-            $cumprimento = 'Bosíssima noite, ';
+            $cumprimento = 'Bonisíssima noite, ';
         }
 
         return $cumprimento;

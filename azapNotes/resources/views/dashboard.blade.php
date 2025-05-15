@@ -160,4 +160,9 @@
         </div>
     </div>
 </body>
+<script>
+    setTimeout(() => {
+        location.reload();
+    }, 3600000);
+</script>
 </html>

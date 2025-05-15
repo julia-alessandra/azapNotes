@@ -6,7 +6,6 @@ use App\Models\Departamento;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-use function Laravel\Prompts\alert;
 
 class DepartamentoController extends Controller
 {

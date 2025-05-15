@@ -61,16 +61,6 @@ class Noticia extends Model
         return $this->data_publicacao->format('d/m/Y');
     }
 
-    public function getRelacionadas(int $limite = 3): BelongsToMany
-    {
-        return $this->belongsToMany(Noticia::class, 'noticia_relacionada', 'noticia_id', 'relacionada_id')
-            ->where('categoria', $this->categoria)
-            ->where('_id', '!=', $this->_id)
-            ->where('status', 'publicada')
-            ->orderBy('data_publicacao', 'desc')
-            ->limit($limite);
-    }
-
     public static function getRecentes(int $limite = 5): BelongsToMany
     {
         return static::where('status', 'publicada')
