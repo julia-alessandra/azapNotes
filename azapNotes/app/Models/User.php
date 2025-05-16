@@ -18,8 +18,13 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'position',
+        'departamento_id',
+        'role',
         'password',
     ];
+    
 
     protected $hidden = [
         'password',
@@ -30,4 +35,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function departamento()
+{
+    return $this->belongsTo(Departamento::class, null, '_id', '_id');
+}
 }

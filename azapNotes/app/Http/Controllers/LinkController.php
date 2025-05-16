@@ -20,7 +20,7 @@ class LinkController extends Controller
     public function create()
     {
         $departamentos = Departamento::where('status', 'ativo')->get();
-        return view('links.create', compact('departamentos'));
+        return view('Links.create');
     }
 
     public function store(Request $request)

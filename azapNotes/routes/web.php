@@ -7,12 +7,14 @@ use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashAdm', [AdminController::class, 'index'])->name('dashAdm');
 
 
     // Departamentos
